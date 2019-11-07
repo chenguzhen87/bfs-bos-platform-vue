@@ -1,25 +1,27 @@
-// sidebar
-$menuText:#bfcbd9;
-$menuActiveText:#409EFF;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$bfs-primary-blue: #409eff;  // 主色调
+$bfs-sub-green: #009688;  // 辅助色 分类字体背景、icon
+$bfs-sub-orange: #FFB800;  // 辅助色 分类字体背景
 
-$menuBg:#304156;
-$menuHover:#263445;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+// 背景色
+$bfs-bg-darkGray: #556D84;  // 控制台左侧菜单主色
+$bfs-bg-darkGray-hover: #44576A;  // 鼠标移入导航栏目背景
+$bfs-bg-lightGray: #F1F2F7;  // 页面背景
+$bfs-bg-lightGray-border: #F2F2F2;  // 描边、分割线
+$bfs-bg-white: #FFFFFF;  // 内容区背景
 
-$sideBarWidth: 210px;
+// 文字用色
+
+$bfs-text-333: #333333;  // 重要、标题
+$bfs-text-666: #666666;  // 正文
+$bfs-text-999: #999999;  // 初始提示文字
+$bfs-text-ccc: #CCCCCC;  // 失效、禁用
+$bfs-text-white: #FFFFFF;  // 文字白色
+
+
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
-:export {
-  menuText: $menuText;
-  menuActiveText: $menuActiveText;
-  subMenuActiveText: $subMenuActiveText;
-  menuBg: $menuBg;
-  menuHover: $menuHover;
-  subMenuBg: $subMenuBg;
-  subMenuHover: $subMenuHover;
-  sideBarWidth: $sideBarWidth;
-}
+// :export {
+  
+// }

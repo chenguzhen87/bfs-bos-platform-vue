@@ -2,7 +2,7 @@
  * @Description: 路由入口
  * @Author: icony/精武陈真
  * @Date: 2019-06-21 11:18:48
- * @LastEditTime: 2019-11-06 17:32:31
+ * @LastEditTime: 2019-11-06 20:33:33
  * @LastEditors: icony/精武陈真
  */
 import Vue from '@icony/vue-container/vue'
@@ -13,6 +13,7 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 import LoginLayout from '@/views/login'
+import AdminLayout from '@/layout/AdminLayout'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -46,31 +47,61 @@ export const constantRoutes = [
   {
     path: '/login',
     component: LoginLayout,
-    children: [{
-      path: '/',
-      component: () => import('@/views/login/create/login')
-    }, {
-      path: 'vcode',
-      name: 'vcode',
-      component: () => import('@/views/login/create/loginCode'),
-    }]
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/login/create/login')
+      }, 
+      {
+        path: 'vcode',
+        name: 'vcode',
+        component: () => import('@/views/login/create/loginCode'),
+      }
+    ]
+  },
+  {
+    path: '/layout',
+    component: Layout,
+    redirect: '/layout/account',
+    children: [
+      {
+        path: 'account',
+        component: () => import('@/views/account')
+      },
+      {
+        path: 'actionLogList',
+        component: () => import('@/views/actionLogList')
+      }
+    ]
+  },
+  {
+    path: '/adminLayout',
+    component: AdminLayout,
+    redirect: '/adminLayout/activeCodeList',
+    children: [
+      {
+        path: 'activeCodeList',
+        component: () => import('@/views/activeCodeList')
+      },
+      {
+        path: 'userList',
+        component: () => import('@/views/userList')
+      },
+      {
+        path: 'instanceList',
+        component: () => import('@/views/userList')
+      },
+      {
+        path: 'logList',
+        component: () => import('@/views/actionLogList')
+      }
+    ]
   },
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/home',
-  //   children: [{
-  //     path: 'home',
-  //     name: 'Home',
-  //     component: () => import('@/views/home/Home'),
-  //     meta: { title: '大厅'}
-  //   }]
-  // },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
