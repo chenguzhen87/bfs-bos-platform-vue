@@ -22,7 +22,7 @@ const whiteList = [
   '/layout',
   '/layout/account',
   '/adminLayout/activeCodeList',
-  '/layout/account',
+  '/layout/account'
 ] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
@@ -66,7 +66,7 @@ router.beforeEach(async(to, from, next) => {
       next()
     } else {
       // other pages that do not have permission to access are redirected to the login page.
-     // next(`/login?redirect=${to.fullPath}`)
+      // next(`/login?redirect=${to.fullPath}`)
       NProgress.done()
     }
   }

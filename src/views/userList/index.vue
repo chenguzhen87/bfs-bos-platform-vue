@@ -6,7 +6,7 @@
  * @LastEditors: icony/精武陈真
  -->
 <template>
-    <div>
-        userList
-    </div>
+  <div>
+    userList
+  </div>
 </template>

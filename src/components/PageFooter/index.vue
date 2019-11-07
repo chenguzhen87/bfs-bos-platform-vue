@@ -6,7 +6,7 @@
  * @LastEditors: icony/精武陈真
  -->
 <template>
-    <el-footer>
-      <span>Copyright © 2019 startnet</span>
-    </el-footer>
+  <el-footer>
+    <span>Copyright © 2019 startnet</span>
+  </el-footer>
 </template>

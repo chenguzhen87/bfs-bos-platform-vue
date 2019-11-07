@@ -51,11 +51,11 @@ export const constantRoutes = [
       {
         path: '/',
         component: () => import('@/views/login/create/login')
-      }, 
+      },
       {
         path: 'vcode',
         name: 'vcode',
-        component: () => import('@/views/login/create/loginCode'),
+        component: () => import('@/views/login/create/loginCode')
       }
     ]
   },

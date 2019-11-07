@@ -8,29 +8,30 @@
 <template>
   <div class="home">
     <div class="logo">
-      <img src="@/assets/images/solarfs_logo.png" width="100" />
+      <img src="@/assets/imgs/solarfs_logo.png" width="100">
     </div>
     <div class="title">{{ $t('lang.home-title') }}</div>
     <el-row type="flex" class="row-bg" justify="center">
-       <router-link 
-        class="nav-item" 
-        to="/register" 
-        style="text-decoration:none;"> 
-          <el-card shadow="hover">
-            {{ $t('lang.home-reg') }}
-          </el-card>
-       </router-link>
-        <router-link 
-        class="nav-item" 
-        to="/login" 
+      <router-link
+        class="nav-item"
+        to="/register"
         style="text-decoration:none;"
-        >
-          <el-card class="card-box" shadow="hover">
-            {{ $t('lang.home-login') }}
-          </el-card>
-        </router-link>
+      >
+        <el-card shadow="hover">
+          {{ $t('lang.home-reg') }}
+        </el-card>
+      </router-link>
+      <router-link
+        class="nav-item"
+        to="/login"
+        style="text-decoration:none;"
+      >
+        <el-card class="card-box" shadow="hover">
+          {{ $t('lang.home-login') }}
+        </el-card>
+      </router-link>
     </el-row>
-  </div>  
+  </div>
 </template>
 <style  lang="scss" scoped>
   .home {
@@ -59,4 +60,6 @@
   .nav-item:hover {
     color: #409EFF
   }
+
 </style>
+
