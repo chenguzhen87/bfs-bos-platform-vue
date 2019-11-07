@@ -2,27 +2,27 @@
  * @Description: 首页
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 15:24:39
- * @LastEditTime: 2019-11-06 18:19:29
- * @LastEditors: icony/精武陈真
+ * @LastEditTime: 2019-11-07 16:28:01
+ * @LastEditors: Duchin/梁达钦
  -->
 <template>
   <div class="home">
     <div class="logo">
-      <img src="@/assets/images/solarfs_logo.png" width="100" />
+      <img src="@/assets/images/solarfs_logo.jpeg" width="100" />
     </div>
     <div class="title">{{ $t('lang.home-title') }}</div>
     <el-row type="flex" class="row-bg" justify="center">
-       <router-link 
-        class="nav-item" 
-        to="/register" 
-        style="text-decoration:none;"> 
+       <router-link
+        class="nav-item"
+        to="/register"
+        style="text-decoration:none;">
           <el-card shadow="hover">
             {{ $t('lang.home-reg') }}
           </el-card>
        </router-link>
-        <router-link 
-        class="nav-item" 
-        to="/login" 
+        <router-link
+        class="nav-item"
+        to="/login"
         style="text-decoration:none;"
         >
           <el-card class="card-box" shadow="hover">
@@ -30,7 +30,7 @@
           </el-card>
         </router-link>
     </el-row>
-  </div>  
+  </div>
 </template>
 <style  lang="scss" scoped>
   .home {

@@ -54,11 +54,11 @@ module.exports = {
         '@': resolve('src')
       }
     },
-    externals:{
-      baseUrl:'BASE_URL',
-      homeUrl:'HOME_URL',
-      invatationCodeUrl:'INVITATION_CODE_URL'
-      //这里的 BASE_URL 与/static/conf.js里的key 值一致
+    externals: {
+      baseUrl: 'BASE_URL',
+      homeUrl: 'HOME_URL',
+      invatationCodeUrl: 'INVITATION_CODE_URL'
+      // 这里的 BASE_URL 与/static/conf.js里的key 值一致
     }
   },
   chainWebpack(config) {

@@ -2,8 +2,8 @@
  * @Description: 权限控制
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 10:57:45
- * @LastEditTime: 2019-11-06 20:24:51
- * @LastEditors: icony/精武陈真
+ * @LastEditTime: 2019-11-07 16:21:17
+ * @LastEditors: Duchin/梁达钦
  */
 import router from './router'
 import store from './store'
