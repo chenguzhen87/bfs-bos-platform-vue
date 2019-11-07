@@ -11,11 +11,11 @@
       <page-header />
     </el-header>
     <el-container>
-       <el-main>
-         <div class="content-main">
-            <router-view></router-view>
-         </div>
-       </el-main>
+      <el-main>
+        <div class="content-main">
+          <router-view />
+        </div>
+      </el-main>
     </el-container>
   </el-container>
 </template>

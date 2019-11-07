@@ -1,3 +1,3 @@
 module.exports = {
-  title: 'beehub-vue-template',
+  title: 'beehub-vue-template'
 }

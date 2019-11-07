@@ -6,15 +6,15 @@
  * @LastEditors: icony/精武陈真
  -->
 <template>
-    <div>
-        account
-    </div>
+  <div>
+    account
+  </div>
 </template>
 <script>
 export default {
-    name: 'Account',
-    mounted() {
-        debugger
-    },
+  name: 'Account',
+  mounted() {
+    debugger
+  }
 }
 </script>

@@ -32,9 +32,9 @@ if (process.env.NODE_ENV === 'production') {
 Vue.use(ElementUI)
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-  locale: 'en-US',    // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale 
+  locale: 'zh-CN', // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale
   messages: {
-    'en-US': require('./i18n/zh-CN')    // 英文语言包
+    'zh-CN': require('./i18n/zh-CN') // 中文语言包
   }
 })
 
@@ -44,6 +44,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  i18n, 
+  i18n,
   render: h => h(App)
 })

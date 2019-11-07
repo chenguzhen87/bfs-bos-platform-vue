@@ -2,33 +2,34 @@
  * @Description: 首页
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 15:24:39
- * @LastEditTime: 2019-11-07 16:28:01
+ * @LastEditTime: 2019-11-07 17:41:14
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
   <div class="home">
     <div class="logo">
-      <img src="@/assets/images/solarfs_logo.jpeg" width="100" />
+      <img src="@/assets/images/solarfs_logo.jpeg" width="100">
     </div>
     <div class="title">{{ $t('lang.home-title') }}</div>
     <el-row type="flex" class="row-bg" justify="center">
-       <router-link
+      <router-link
         class="nav-item"
         to="/register"
-        style="text-decoration:none;">
-          <el-card shadow="hover">
-            {{ $t('lang.home-reg') }}
-          </el-card>
-       </router-link>
-        <router-link
+        style="text-decoration:none;"
+      >
+        <el-card shadow="hover">
+          {{ $t('lang.home-reg') }}
+        </el-card>
+      </router-link>
+      <router-link
         class="nav-item"
         to="/login"
         style="text-decoration:none;"
-        >
-          <el-card class="card-box" shadow="hover">
-            {{ $t('lang.home-login') }}
-          </el-card>
-        </router-link>
+      >
+        <el-card class="card-box" shadow="hover">
+          {{ $t('lang.home-login') }}
+        </el-card>
+      </router-link>
     </el-row>
   </div>
 </template>
@@ -59,4 +60,10 @@
   .nav-item:hover {
     color: #409EFF
   }
+<<<<<<< HEAD
 </style>
+=======
+
+</style>
+
+>>>>>>> ebacee5637f0ab087f2f538de5a222d6a521619a
