@@ -2,7 +2,7 @@
  * @Description: 首页
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 15:24:39
- * @LastEditTime: 2019-11-07 17:41:14
+ * @LastEditTime: 2019-11-07 17:46:41
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -60,10 +60,6 @@
   .nav-item:hover {
     color: #409EFF
   }
-<<<<<<< HEAD
-</style>
-=======
 
 </style>
 
->>>>>>> ebacee5637f0ab087f2f538de5a222d6a521619a

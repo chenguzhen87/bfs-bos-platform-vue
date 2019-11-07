@@ -1,3 +1,10 @@
+/*
+ * @Description: main
+ * @Author: Duchin/梁达钦
+ * @Date: 2019-11-07 17:39:27
+ * @LastEditTime: 2019-11-07 19:11:18
+ * @LastEditors: Duchin/梁达钦
+ */
 import Vue from '@icony/vue-container/vue'
 import VueI18n from 'vue-i18n'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
@@ -11,6 +18,7 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
+import * as filters from './filters' // global filters
 
 import '@/icons' // icon
 import '@/permission' // permission control
@@ -39,6 +47,13 @@ const i18n = new VueI18n({
 })
 
 Vue.config.productionTip = false
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+// store routr 注册全局
+window.APP_GLOBAL_STORE = store
+window.APP_GLOBAL_ROUTER = router
 
 new Vue({
   el: '#app',

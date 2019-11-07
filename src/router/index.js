@@ -2,8 +2,8 @@
  * @Description: 路由入口
  * @Author: icony/精武陈真
  * @Date: 2019-06-21 11:18:48
- * @LastEditTime: 2019-11-06 20:33:33
- * @LastEditors: icony/精武陈真
+ * @LastEditTime: 2019-11-07 19:29:34
+ * @LastEditors: Duchin/梁达钦
  */
 import Vue from '@icony/vue-container/vue'
 import Router from '@icony/vue-container/vue-router'
@@ -42,25 +42,29 @@ import AdminLayout from '@/layout/AdminLayout'
 export const constantRoutes = [
   {
     path: '/',
+    name: 'home',
     component: () => import('@/views/home/index')
   },
   {
     path: '/login',
+    name: 'login',
     component: LoginLayout,
     children: [
       {
         path: '/',
+        name: 'loginone',
         component: () => import('@/views/login/create/login')
       },
       {
-        path: 'vcode',
-        name: 'vcode',
+        path: 'logincode',
+        name: 'logincode',
         component: () => import('@/views/login/create/loginCode')
       }
     ]
   },
   {
     path: '/layout',
+    name: 'layout',
     component: Layout,
     redirect: '/layout/account',
     children: [

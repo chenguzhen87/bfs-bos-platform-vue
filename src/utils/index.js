@@ -2,8 +2,8 @@
  * @Description: Parse the time to string
  * @Author: icony/精武陈真
  * @Date: 2019-06-20 16:29:12
- * @LastEditTime: 2019-06-21 10:29:51
- * @LastEditors: icony/精武陈真
+ * @LastEditTime: 2019-11-07 19:00:29
+ * @LastEditors: Duchin/梁达钦
  */
 
 export function parseTime(time, cFormat) {
@@ -105,4 +105,39 @@ export function param2Obj(url) {
         .replace(/\+/g, ' ') +
       '"}'
   )
+}
+
+/**
+ * @description: 类型检查
+ * @param {type}
+ * @return: {String}
+ */
+
+export function typeCheck(param) {
+  return Object.prototype.toString.call(param)
+}
+
+/**
+ * @description: 批量修改stage
+ * @param {Object}
+ * @return:
+ */
+export function batchUpdateState(state, payload) {
+  if (typeCheck(state) === '[object Object]' && typeCheck(payload) === '[object Object]') {
+    for (const key in payload) {
+      state[key] = payload[key]
+    }
+  } else {
+    console.error('expected plain Object')
+  }
+}
+
+/**
+ * @description: 获取lang
+ * @param {Object}
+ * @return:
+ */
+export function getNavigatorLang() {
+  const lang = window.navigator.userLanguage || window.navigator.language
+  return lang.toLowerCase()
 }
