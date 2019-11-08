@@ -37,7 +37,7 @@
 import skypegmwcnHomeUrl from 'skypegmwcnHomeUrl'
 import {
   base64Encoder
-} from '@/filters/index'
+} from '@/filters/convert'
 import {
   loginOne
 } from '@/api/user.js'
@@ -91,6 +91,7 @@ export default {
                 switch (err.data.status) {
                   case 401:
                     console.log('拦截器统一处理...')
+                    break
                   default:
                     console.log(err.data)
                     console.log(err.data.data.message)
