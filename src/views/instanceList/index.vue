@@ -2,16 +2,16 @@
  * @Description: 实例管理
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-08 19:18:36
+ * @LastEditTime: 2019-11-11 16:46:46
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
   <div>
     <el-row>
-        实例管理
+      实例管理
     </el-row>
     <el-divider />
-    <el-row :gutter='20' style="margin-bottom:20px">
+    <el-row :gutter="20" style="margin-bottom:20px">
       <el-col :span="10">
         <el-input v-model="registEmail" placeholder="请输入注册邮箱" width="100%" />
       </el-col>
@@ -118,7 +118,7 @@ export default {
         const arrByZM4RTN = []
         const queryCondition = this.registEmail
         for (var i = 0; i < this.tableData.length; i++) {
-          if (this.tableData[i].mailbox.search(queryCondition) != -1) {
+          if (this.tableData[i].mailbox.search(queryCondition) !== -1) {
             arrByZM4RTN.push(this.tableData[i])
           }
         }
@@ -142,7 +142,7 @@ export default {
   methods: {
     handleDel(row) {
       console.log(row)
-      if (row.vm_status == 'closed') {
+      if (row.vm_status === 'closed') {
         // let url =`${apiBaseUrl}/v1/virtualmachines/` + row.name +"/mailbox/" +row.Mailbox; // this.axios.delete(url)
         delInstance(row.name, row.Mailbox).then(
           response => {
@@ -241,36 +241,39 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-purple-dark {
-  background: #99a9bf;
-}
-.bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
-.row-bg {
-  padding: 10px 0;
-  background-color: #f9fafc;
-}
-/**dropdown*/
-.el-dropdown-link {
-  cursor: pointer;
-  color: #409eff;
-}
-.el-icon-arrow-down {
-  font-size: 12px;
-}
-.demonstration {
-  display: block;
-  color: #8492a6;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
+  .nav-item{
+    color: #66b1ff;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+  /**dropdown*/
+  .el-dropdown-link {
+    cursor: pointer;
+    color: #409eff;
+  }
+  .el-icon-arrow-down {
+    font-size: 12px;
+  }
+  .demonstration {
+    display: block;
+    color: #8492a6;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 </style>
 

@@ -78,7 +78,7 @@ export default {
     createBatchActiveCode(formName) {
       const data = this.batchActiveCodeForm
 
-      if (data.mailbox == null || data.mailbox == '') {
+      if (data.mailbox == null || data.mailbox === '') {
         this.$message.error('请重新登录。')
         this.$router.push('/login')
         return
@@ -93,7 +93,8 @@ export default {
           // 生成成功关闭页面，重置form
           this.closeDialog(formName)
           console.log('data.send_mail_status=' + data.send_mail_status)
-          if (data.send_mail_status == true) {
+          if (data.send_mail_status === true || data.send_mail_status === 'true') {
+            debugger
             this.$alert(
               '激活码已经发送到' + this.batchActiveCodeForm.mailbox + ' 邮箱',
               '',

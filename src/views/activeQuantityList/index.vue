@@ -5,7 +5,7 @@
       <el-breadcrumb-item>数量</el-breadcrumb-item>
     </el-breadcrumb>
     <el-divider />
-    <el-row :gutter='20' style="margin-bottom:20px">
+    <el-row :gutter="20" style="margin-bottom:20px">
       <el-col :span="10">
         <el-input v-model="queryActiveCode" placeholder="请输入激活码" width="100%" />
       </el-col>
@@ -64,10 +64,10 @@ export default {
       get() {
         let arrByZM = [] // 声明一个空数组来存放数据
         const arrByZM4RTN = []
-        if (this.queryMode == 3) {
+        if (this.queryMode === 3) {
           // 未激活
           arrByZM = this.tableData.filter(item => !item.code_status)
-        } else if (this.queryMode == 2) {
+        } else if (this.queryMode === 2) {
           // 已激活
           arrByZM = this.tableData.filter(item => item.code_status)
         } else {
@@ -76,7 +76,7 @@ export default {
         }
         const queryCondition = this.queryActiveCode
         for (var i = 0; i < arrByZM.length; i++) {
-          if (arrByZM[i].active_code.search(queryCondition) != -1) {
+          if (arrByZM[i].active_code.search(queryCondition) !== -1) {
             arrByZM4RTN.push(arrByZM[i])
           }
         }
@@ -128,6 +128,7 @@ export default {
             switch (err.data.status) {
               case 401:
                 console.log('拦截器统一处理...')
+                break
               default:
                 console.log(err.data)
                 console.log(err.data.data.message)

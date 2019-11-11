@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Duchin/梁达钦
  * @Date: 2019-11-08 19:05:48
- * @LastEditTime: 2019-11-11 15:24:20
+ * @LastEditTime: 2019-11-11 16:27:09
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -51,7 +51,7 @@
 </style>
 
 <script>
-import AccountDetail from '@/components/accountCommon/AccountDetail.vue'
+import AccountDetail from '@/components/AccountCommon/AccountDetail.vue'
 export default {
   components: {
     AccountDetail
