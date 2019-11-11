@@ -2,14 +2,14 @@
  * @Description:
  * @Author: Duchin/梁达钦
  * @Date: 2019-11-08 19:05:48
- * @LastEditTime: 2019-11-08 19:14:42
+ * @LastEditTime: 2019-11-11 15:24:20
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
   <div>
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/adminLayout/instanceList' }">平台</el-breadcrumb-item>
-      <el-breadcrumb-item>$在线账户</el-breadcrumb-item>
+      <el-breadcrumb-item>在线账户</el-breadcrumb-item>
     </el-breadcrumb>
     <el-divider />
     <el-row>

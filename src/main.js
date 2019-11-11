@@ -2,7 +2,7 @@
  * @Description: main
  * @Author: Duchin/梁达钦
  * @Date: 2019-11-07 17:39:27
- * @LastEditTime: 2019-11-07 19:11:18
+ * @LastEditTime: 2019-11-11 16:15:31
  * @LastEditors: Duchin/梁达钦
  */
 import Vue from '@icony/vue-container/vue'
@@ -11,7 +11,8 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-// import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import enUS from 'element-ui/lib/locale/lang/en' // lang i18n 英文
+import zhCN from 'element-ui/lib/locale/lang/zh-CN' // lang i18n 中文
 
 import '@/styles/index.scss' // global css
 
@@ -37,13 +38,22 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // set ElementUI lang to EN
-Vue.use(ElementUI)
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-  locale: 'zh-CN', // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale
+  locale: store.getters.lang, // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale
   messages: {
-    'zh-CN': require('./i18n/zh-CN') // 中文语言包
+    'zh-cn': {
+      ...require('./i18n/zh-CN'),
+      ...zhCN
+    }, // 中文语言包
+    'en-us': {
+      ...require('./i18n/en-US'),
+      ...enUS
+    } // 英文语言包
   }
+})
+Vue.use(ElementUI, {
+  i18n: (key, value) => i18n.t(key, value)
 })
 
 Vue.config.productionTip = false

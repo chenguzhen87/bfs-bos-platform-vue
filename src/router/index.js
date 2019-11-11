@@ -2,7 +2,7 @@
  * @Description: 路由入口
  * @Author: icony/精武陈真
  * @Date: 2019-06-21 11:18:48
- * @LastEditTime: 2019-11-08 19:10:30
+ * @LastEditTime: 2019-11-11 15:58:25
  * @LastEditors: Duchin/梁达钦
  */
 import Vue from '@icony/vue-container/vue'
@@ -114,7 +114,7 @@ export const constantRoutes = [
       },
       {
         path: 'activeQuantityList/:id',
-        name: 'ActiveCodeList',
+        name: 'ActiveCodeListId',
         component: () => import('@/views/activeCodeList/ActiveQuantityList')
       },
       {

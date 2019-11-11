@@ -49,6 +49,7 @@ import {
   getActiveList
 } from '@/api/admin'
 export default {
+  name: 'ActiveCodeListId',
   data() {
     return {
       tableData: [],

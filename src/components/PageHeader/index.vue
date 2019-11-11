@@ -2,7 +2,7 @@
  * @Description: 页头
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 20:09:51
- * @LastEditTime: 2019-11-11 11:13:06
+ * @LastEditTime: 2019-11-11 16:14:06
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -12,7 +12,10 @@
         src="@/assets/images/solarfs_logo.png"
         class="image-logo"
       >
-      <b>SolarFS</b>
+      <b>{{ $t('lang.page-header-user-title') }}</b>
+      <a href="javascript: ;" class="locale" title="切换语言" @click="locale">
+        {{ lang === 'zh-cn' ? '英文' : '中文' }}
+      </a>
     </div>
     <div class="flexItem" style="text-align: right;">
       <el-dropdown @command="handleCommand">
@@ -23,12 +26,12 @@
           />
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="account">账户管理</el-dropdown-item>
-          <el-dropdown-item command="log">操作日志</el-dropdown-item>
+          <el-dropdown-item command="account">{{ $t('lang.page-header-menu-account') }}</el-dropdown-item>
+          <el-dropdown-item command="log">{{ $t('lang.page-header-menu-log') }}</el-dropdown-item>
           <template v-if="'admin'== this.$store.getters.currentUser.role">
-            <el-dropdown-item command="admin">管理后台</el-dropdown-item>
+            <el-dropdown-item command="admin">{{ $t('lang.page-header-menu-admin') }}</el-dropdown-item>
           </template>
-          <el-dropdown-item command="quit">退出</el-dropdown-item>
+          <el-dropdown-item command="quit">{{ $t('lang.page-header-menu-quit') }}</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -37,14 +40,33 @@
 
 <script>
 import { mapActions } from '@icony/vue-container/vuex'
+import { BATCH_UPDATE_STATE } from '@/utils/mutation-types'
 export default {
   data() {
     return {
       user: 'admin',
-      commandKey: ''
+      commandKey: '',
+      lang: 'zh-cn' // 英文 en-us
     }
   },
   methods: {
+    locale() {
+      const langs = { }
+      console.log('locale')
+      if (this.lang === 'zh-cn') {
+        langs.lang = 'en-us'
+        this.lang = 'en-us'
+      } else {
+        langs.lang = 'zh-cn'
+        this.lang = 'zh-cn'
+      }
+      this.$store.commit({
+        type: `user/${BATCH_UPDATE_STATE}`,
+        lang: langs.lang
+      })
+      console.log('this', this)
+      this.$i18n.locale = langs.lang
+    },
     handleCommand(command) {
       if (this.commandKey === command) {
         return
@@ -111,5 +133,9 @@ export default {
 
     .el-dropdown-link {
         font-size: 30px;
+    }
+    .locale{
+      margin-left: 10px;
+
     }
 </style>
