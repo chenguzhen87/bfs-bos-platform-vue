@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import apiBaseUrl from 'apiBaseUrl'
 const Base64 = require('js-base64').Base64
 import {
   createBatchActive
@@ -134,7 +133,7 @@ export default {
           this.$message('数据下载中...')
           // 请求下载数据
           try {
-            const url = `${apiBaseUrl}/v1/activationcode/download/` + keycode
+            const url = `${API_BASE_URL}/v1/activationcode/download/` + keycode
             var blob = new Blob([], {
               type: 'application/octet-stream;charset=utf-8'
             })

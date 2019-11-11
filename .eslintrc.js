@@ -2,7 +2,10 @@ module.exports = {
   root: true,
   globals: {
     APP_GLOBAL_STORE: false,
-    APP_GLOBAL_ROUTER: false
+    APP_GLOBAL_ROUTER: false,
+    API_BASE_URL: false,
+    SKYPEGMWCN_HOME_URL: false,
+    INVITATION_CODE_URL: false
   },
   parserOptions: {
     parser: 'babel-eslint',

@@ -53,12 +53,6 @@ module.exports = {
       alias: {
         '@': resolve('src')
       }
-    },
-    externals: {
-      apiBaseUrl: 'API_BASE_URL',
-      skypegmwcnHomeUrl: 'SKYPEGMWCN_HOME_URL',
-      invitationCodeUrl: 'INVITATION_CODE_URL'
-      // 这里的 BASE_URL 与/static/conf.js里的key 值一致
     }
   },
   chainWebpack(config) {

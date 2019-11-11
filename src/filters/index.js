@@ -109,7 +109,7 @@ export function LogOptionType(value) {
  * @param {String} value undefined null ''类型
  */
 export function EmptyReplace(value) {
-  if (typeof value === 'undefined' || value == null || value == '') {
+  if (typeof value === 'undefined' || value === null || value === '') {
     return '-'
   } else {
     return value

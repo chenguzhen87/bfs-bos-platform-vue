@@ -41,8 +41,8 @@
   </div>
 </template>
 <script>
-import skypegmwcnHomeUrl from 'skypegmwcnHomeUrl'
-import invitationCodeUrl from 'invitationCodeUrl'
+// import skypegmwcnHomeUrl from 'skypegmwcnHomeUrl'
+// import invitationCodeUrl from 'invitationCodeUrl'
 import {
   base64Encoder
 } from '@/filters/convert'
@@ -66,11 +66,11 @@ export default {
     }
   },
   mounted() {
-    this.invitationCodeUrl = `${invitationCodeUrl}`
+    this.invitationCodeUrl = `${INVITATION_CODE_URL}`
   },
   methods: {
     goHome() {
-      window.open(`${skypegmwcnHomeUrl}`, '_self')
+      window.open(`${SKYPEGMWCN_HOME_URL}`, '_self')
     },
     next(formName) {
       const invitationCode = this.registerForm.invitationCode

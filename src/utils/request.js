@@ -9,11 +9,11 @@ import axios from '@icony/vue-container/axios'
 import { Message } from 'element-ui'
 import store from '@/store'
 // import { getToken } from '@/utils/auth'
-import apiBaseUrl from 'apiBaseUrl'
+// import apiBaseUrl from 'apiBaseUrl'
 import { getCookie } from '@/utils/auth'
 // create an axios instance
 const service = axios.create({
-  baseURL: apiBaseUrl, // url = base url + request url
+  baseURL: API_BASE_URL, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })
@@ -23,7 +23,6 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
     const hasToken = getCookie()
-    console.log('apiBaseUrl', apiBaseUrl)
     if (hasToken) {
       // let each request carry token
       // ['token'] is a custom headers key
@@ -57,7 +56,7 @@ service.interceptors.response.use(
     const res = response.data
     // if the custom code is not 200, it is judged as an error.
     if (res.code !== 200) {
-      // 401 token无效，403 禁止登录
+      // 401 token无效
       if (res.code === 401) {
         // to re-login
         Message({
@@ -81,12 +80,11 @@ service.interceptors.response.use(
   },
   error => {
     console.log('err', error) // for debug
-    // Message({
-    //   message: error.msg,
-    //   type: 'error',
-    //   duration: 5 * 1000
-    // })
-    // debugger
+    Message({
+      message: error.msg,
+      type: 'error',
+      duration: 5 * 1000
+    })
     return Promise.reject(error.response)
   }
 )

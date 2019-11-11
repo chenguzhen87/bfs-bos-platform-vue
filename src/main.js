@@ -11,8 +11,8 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import enUS from 'element-ui/lib/locale/lang/en' // lang i18n 英文
-import zhCN from 'element-ui/lib/locale/lang/zh-CN' // lang i18n 中文
+// import enUS from 'element-ui/lib/locale/lang/en' // lang i18n 英文
+// import zhCN from 'element-ui/lib/locale/lang/zh-CN' // lang i18n 中文
 
 import '@/styles/index.scss' // global css
 
@@ -32,10 +32,10 @@ import '@/permission' // permission control
  * Currently MockJs will be used in the production environment,
  * please remove it before going online! ! !
  */
-import { mockXHR } from '../mock'
-if (process.env.NODE_ENV === 'production') {
-  mockXHR()
-}
+// import { mockXHR } from '../mock'
+// if (process.env.NODE_ENV === 'production') {
+//   mockXHR()
+// }
 
 // set ElementUI lang to EN
 Vue.use(VueI18n)
@@ -43,13 +43,8 @@ const i18n = new VueI18n({
   locale: store.getters.lang, // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale
   messages: {
     'zh-cn': {
-      ...require('./i18n/zh-CN'),
-      ...zhCN
-    }, // 中文语言包
-    'en-us': {
-      ...require('./i18n/en-US'),
-      ...enUS
-    } // 英文语言包
+      ...require('./lang/zh-CN')
+    } // 中文语言包
   }
 })
 Vue.use(ElementUI, {

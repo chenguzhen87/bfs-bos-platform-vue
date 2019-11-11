@@ -34,7 +34,7 @@
 </template>
 <script>
 // import apiBaseUrl from "apiBaseUrl";
-import skypegmwcnHomeUrl from 'skypegmwcnHomeUrl'
+// import skypegmwcnHomeUrl from 'skypegmwcnHomeUrl'
 import {
   base64Encoder
 } from '@/filters/convert'
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     goHome() {
-      window.open(`${skypegmwcnHomeUrl}`, '_self')
+      window.open(`${SKYPEGMWCN_HOME_URL}`, '_self')
       // this.$router.push({ path:"/" });
     },
     next(formName) {

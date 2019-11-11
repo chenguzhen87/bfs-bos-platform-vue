@@ -79,7 +79,7 @@
 </template>
 <script>
 import serviceDialog from '@/components/Admin/BatchCreateActiveCode.vue'
-import apiBaseUrl from 'apiBaseUrl'
+// import apiBaseUrl from 'apiBaseUrl'
 import {
   sendActive,
   downloadActiveFile,
@@ -106,7 +106,7 @@ export default {
       this.tableData.forEach(function(item, index) {
         item.new_key_code = Base64.encode(item.code_key)
         item.url =
-          `${apiBaseUrl}/v1/activationcode/download/` +
+          `${API_BASE_URL}/v1/activationcode/download/` +
           Base64.encode(item.code_key)
         arr.push(item)
       })
