@@ -13,42 +13,34 @@
       </el-col>
     </el-row>
     <el-divider />
-    <el-row>
-      <el-col :span="24">
-        <el-form ref="logForm" :model="logForm" label-width="80px">
-          <div style="float:left;">
-            <div style="float:left;text-align:center;padding-left:10px;">起止时间:</div>
-            <div class="block" style="float:left;">
-              <el-date-picker
-                v-model="logForm.dateConditions"
-                type="datetimerange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-              />
-            </div>
-            <div style="float:left;">
-              <el-select v-model="logForm.optionType" placeholder="请选择">
-                <el-option label="全部" value="all" />
-                <el-option label="创建" value="create" />
-                <el-option label="启动" value="start" />
-                <el-option label="关闭" value="closed" />
-                <el-option label="删除" value="delete" />
-                <el-option label="登陆" value="login" />
-                <el-option label="登出" value="logout" />
-              </el-select>
-            </div>
-            <div style="float:left;">
-              <el-input v-model="logForm.queryCondition" placeholder="请输入内容" />
-            </div>
-            <div style="float:left;">
-              <el-button round @click="querySubmit()">查询</el-button>
-            </div>
-          </div>
-        </el-form>
-      </el-col>
-    </el-row>
-    <el-divider />
+    <el-form ref="logForm" :inline="true" :model="logForm" label-width="80px">
+      <el-form-item>
+        <el-date-picker
+          v-model="logForm.dateConditions"
+          type="datetimerange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期"
+        />
+      </el-form-item>
+      <el-form-item>
+        <el-select v-model="logForm.optionType" placeholder="请选择">
+          <el-option label="全部" value="all" />
+          <el-option label="创建" value="create" />
+          <el-option label="启动" value="start" />
+          <el-option label="关闭" value="closed" />
+          <el-option label="删除" value="delete" />
+          <el-option label="登陆" value="login" />
+          <el-option label="登出" value="logout" />
+        </el-select>
+      </el-form-item>
+      <el-form-item>
+        <el-input v-model="logForm.queryCondition" placeholder="请输入内容" />
+      </el-form-item>
+      <el-form-item>
+        <el-button type='primary' @click="querySubmit()">查询</el-button>
+      </el-form-item>
+    </el-form>
     <el-table
       :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
       border
@@ -176,15 +168,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.el-col {
-  border-radius: 4px;
-}
+
 .bg-purple-dark {
   background: #99a9bf;
 }
