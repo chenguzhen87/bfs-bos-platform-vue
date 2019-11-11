@@ -69,7 +69,7 @@
       </el-table-column>
     </el-table>
     <br>
-    <div style="float:left">
+    <div>
       <el-pagination
         :current-page="currentPage"
         :page-size="pageSize"

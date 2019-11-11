@@ -138,6 +138,10 @@ export default {
 .el-menu {
   border:none
 }
+.el-main {
+   height: calc(100vh - 60px);
+   overflow: auto
+}
 
 .admin-main {
    background: #fff;
