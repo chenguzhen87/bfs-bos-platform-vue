@@ -83,21 +83,21 @@ export function BooleanStrValue(string) {
  * @param {String} string 类型
  */
 export function LogOptionType(value) {
-  if (value == 'create') {
+  if (value === 'create') {
     return '创建'
-  } else if (value == 'closed') {
+  } else if (value === 'closed') {
     return '关闭'
-  } else if (value == 'start') {
+  } else if (value === 'start') {
     return '启动'
-  } else if (value == 'delete') {
+  } else if (value === 'delete') {
     return '删除'
-  } else if (value == 'import') {
+  } else if (value === 'import') {
     return '导入'
-  } else if (value == 'export') {
+  } else if (value === 'export') {
     return '导出'
-  } else if (value == 'login') {
+  } else if (value === 'login') {
     return '登陆'
-  } else if (value == 'logout') {
+  } else if (value === 'logout') {
     return '登出'
   } else {
     return '未定义'

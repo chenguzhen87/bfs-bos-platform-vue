@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
+  globals: {
+    APP_GLOBAL_STORE: false,
+    APP_GLOBAL_ROUTER: false
+  },
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module'
