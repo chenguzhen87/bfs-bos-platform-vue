@@ -2,13 +2,13 @@
  * @Description: 用户管理
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-11 11:32:43
+ * @LastEditTime: 2019-11-11 16:30:10
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
   <div>
     <el-row>
-     用户管理
+      用户管理
     </el-row>
     <el-divider />
     <el-row style="margin-bottom:20px">
@@ -101,7 +101,7 @@ export default {
         const arrByZM4RTN = []
         const queryCondition = this.registEmail
         for (var i = 0; i < this.tableData.length; i++) {
-          if (this.tableData[i].mailbox.search(queryCondition) != -1) {
+          if (this.tableData[i].mailbox.search(queryCondition) !== -1) {
             arrByZM4RTN.push(this.tableData[i])
           }
         }

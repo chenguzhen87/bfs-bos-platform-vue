@@ -2,7 +2,7 @@
  * @Description: 用户
  * @Author: icony/精武陈真
  * @Date: 2019-09-16 19:25:47
- * @LastEditTime: 2019-11-08 14:26:21
+ * @LastEditTime: 2019-11-11 16:29:15
  * @LastEditors: Duchin/梁达钦
  */
 import {
@@ -68,9 +68,9 @@ const actions = {
     return new Promise((resolve, reject) => {
       logout().then((result) => {
         dispatch('resetUserInfo').then(() => {
-          console.log(APP_GLOBAL_ROUTER)
+          console.log(window.APP_GLOBAL_ROUTER)
           // location.href="/login"
-          APP_GLOBAL_ROUTER.push('/login')
+          window.APP_GLOBAL_ROUTER.push('/login')
         })
         resetRouter()
         resolve(result)

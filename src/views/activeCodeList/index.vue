@@ -2,7 +2,7 @@
  * @Description: 激活码管理
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-11 11:27:23
+ * @LastEditTime: 2019-11-11 16:39:18
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -78,7 +78,7 @@
   </div>
 </template>
 <script>
-import serviceDialog from '@/components/admin/BatchCreateActiveCode.vue'
+import serviceDialog from '@/components/Admin/BatchCreateActiveCode.vue'
 import apiBaseUrl from 'apiBaseUrl'
 import {
   sendActive,
@@ -200,6 +200,9 @@ export default {
   }
   .table-download{
     font-size: 14px;
+    color: #66b1ff;
+  }
+  .nav-item{
     color: #66b1ff;
   }
 }

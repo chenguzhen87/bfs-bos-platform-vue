@@ -2,11 +2,11 @@
  * @Description:request
  * @Author: Duchin/梁达钦
  * @Date: 2019-11-07 17:39:27
- * @LastEditTime: 2019-11-07 18:40:02
+ * @LastEditTime: 2019-11-11 16:47:40
  * @LastEditors: Duchin/梁达钦
  */
 import axios from '@icony/vue-container/axios'
-import { MessageBox, Message } from 'element-ui'
+import { Message } from 'element-ui'
 import store from '@/store'
 // import { getToken } from '@/utils/auth'
 import apiBaseUrl from 'apiBaseUrl'
@@ -70,7 +70,7 @@ service.interceptors.response.use(
           // location.href="/login"
           window.APP_GLOBAL_ROUTER.replace({
             path: '/login',
-            query: { redirect: APP_GLOBAL_ROUTER.currentRoute.fullPath }// 登录成功后跳入浏览的当前页面
+            query: { redirect: window.APP_GLOBAL_ROUTER.currentRoute.fullPath }// 登录成功后跳入浏览的当前页面
           })
         })
       }

@@ -2,7 +2,7 @@
  * @Description: 账户
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:01:37
- * @LastEditTime: 2019-11-11 14:19:33
+ * @LastEditTime: 2019-11-11 16:47:24
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -67,9 +67,9 @@
 }
 </style>
 <script>
-import AccountSecret from '@/components/accountDialog/AccountSecret.vue'
-import AccountRegion from '@/components/accountDialog/AccountRegion.vue'
-import AccountDetail from '@/components/accountCommon/AccountDetail.vue'
+import AccountSecret from '@/components/AccountDialog/AccountSecret.vue'
+import AccountRegion from '@/components/AccountDialog/AccountRegion.vue'
+import AccountDetail from '@/components/AccountCommon/AccountDetail.vue'
 import { mapActions } from '@icony/vue-container/vuex'
 // import apiBaseUrl from 'apiBaseUrl'
 import {
@@ -98,7 +98,7 @@ export default {
   },
   computed: {
     hasAccount: function() {
-      if (this.currentVM == null || this.currentVM == '') {
+      if (this.currentVM == null || this.currentVM === '') {
         // 为空或者不存在；代表没有vm
         return false
       } else {
@@ -177,7 +177,7 @@ export default {
       )
     },
     handleShutAccount() {
-      if (this.vm_name == null || this.vm_name == '') {
+      if (this.vm_name == null || this.vm_name === '') {
         this.$message.error('故障:参数传递失败。需要重新登录')
         this.$router.push({
           path: '/login'
@@ -198,7 +198,7 @@ export default {
       )
     },
     handleDeleteAccount() {
-      if (this.vm_name == null || this.vm_name == '') {
+      if (this.vm_name == null || this.vm_name === '') {
         this.$message.error('故障:参数传递失败。需要重新登录')
         this.$router.push({
           path: '/login'
@@ -247,7 +247,7 @@ export default {
       this.requestData(data.email)
     },
     requestData(email) {
-      if (email == null || email == '') {
+      if (email == null || email === '' || email === 'undefined') {
         this.$alert('用户失效，请重新登录。')
         this.logout()
       }

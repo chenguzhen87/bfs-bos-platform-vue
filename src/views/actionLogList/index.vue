@@ -2,7 +2,7 @@
  * @Description: 操作日志
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-08 17:25:55
+ * @LastEditTime: 2019-11-11 16:22:57
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -38,7 +38,7 @@
         <el-input v-model="logForm.queryCondition" placeholder="请输入内容" />
       </el-form-item>
       <el-form-item>
-        <el-button type='primary' @click="querySubmit()">查询</el-button>
+        <el-button type="primary" @click="querySubmit()">查询</el-button>
       </el-form-item>
     </el-form>
     <el-table
@@ -118,7 +118,7 @@ export default {
       let start = ''
       let end = ''
 
-      if (date1 != null && date1.length == 2) {
+      if (date1 != null && date1.length === 2) {
         start = formatDate(date1[0])
         end = formatDate(date1[1])
       }
@@ -128,7 +128,7 @@ export default {
         operation_type: this.logForm.optionType,
         start_time: start
       }
-      if (this.logForm.optionType == 'all') {
+      if (this.logForm.optionType === 'all') {
         data.operation_type = ''
       }
       // this.$message("---******");
