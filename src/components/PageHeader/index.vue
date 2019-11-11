@@ -2,7 +2,7 @@
  * @Description: 页头
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 20:09:51
- * @LastEditTime: 2019-11-08 17:32:48
+ * @LastEditTime: 2019-11-11 11:13:06
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       user: 'admin',
-      commandKey: 'account'
+      commandKey: ''
     }
   },
   methods: {

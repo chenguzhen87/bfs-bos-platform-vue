@@ -13,6 +13,10 @@ html,body,#app {
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
+// table表头无法对齐
+body .el-table th.gutter {
+  display: table-cell !important
+}
 
 label {
   font-weight: 700;
