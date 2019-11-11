@@ -9,7 +9,7 @@
   <div class="flexBox">
     <div>
       <img
-        src="@/assets/imgs/solarfs_logo.png"
+        src="@/assets/images/solarfs_logo.png"
         class="image-logo"
       >
       <b>SolarFS</b>
