@@ -13,9 +13,9 @@
         class="image-logo"
       >
       <b>{{ $t('lang.page-header-user-title') }}</b>
-      <a href="javascript: ;" class="locale" title="切换语言" @click="locale">
+      <!-- <a href="javascript: ;" class="locale" title="切换语言" @click="locale">
         {{ lang === 'zh-cn' ? '英文' : '中文' }}
-      </a>
+      </a> -->
     </div>
     <div class="flexItem" style="text-align: right;">
       <el-dropdown @command="handleCommand">
