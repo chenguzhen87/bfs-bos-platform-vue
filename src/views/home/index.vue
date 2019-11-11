@@ -8,7 +8,7 @@
 <template>
   <div class="home">
     <div class="logo">
-      <img src="@/assets/images/solarfs_logo.jpeg" width="100">
+      <img src="@/assets/images/solarfs_logo.png" width="100">
     </div>
     <div class="title">{{ $t('lang.home-title') }}</div>
     <el-row type="flex" class="row-bg" justify="center">
