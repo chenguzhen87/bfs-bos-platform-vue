@@ -8,17 +8,14 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="24">
-        <div style="float:left">用户管理</div>
-      </el-col>
+     用户管理
     </el-row>
     <el-divider />
-    <el-row>
-      <el-col :span="24">
+    <el-row style="margin-bottom:20px">
+      <el-col :span="10">
         <el-input v-model="registEmail" placeholder="请输入注册邮箱" width="100%" />
       </el-col>
     </el-row>
-    <el-divider />
     <el-table
       :data="computedTableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
       border
@@ -192,15 +189,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.el-col {
-  border-radius: 4px;
-}
 .bg-purple-dark {
   background: #99a9bf;
 }

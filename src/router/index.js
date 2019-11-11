@@ -2,7 +2,7 @@
  * @Description: 路由入口
  * @Author: icony/精武陈真
  * @Date: 2019-06-21 11:18:48
- * @LastEditTime: 2019-11-11 15:58:25
+ * @LastEditTime: 2019-11-11 16:17:34
  * @LastEditors: Duchin/梁达钦
  */
 import Vue from '@icony/vue-container/vue'
@@ -114,8 +114,8 @@ export const constantRoutes = [
       },
       {
         path: 'activeQuantityList/:id',
-        name: 'ActiveCodeListId',
-        component: () => import('@/views/activeCodeList/ActiveQuantityList')
+        name: 'ActiveCodeList',
+        component: () => import('@/views/activeQuantityList')
       },
       {
         path: 'userList',
@@ -130,7 +130,7 @@ export const constantRoutes = [
       {
         path: 'instanceDetail/:id',
         name: 'instanceDetail',
-        component: () => import('@/views/instanceList/instanceDetail')
+        component: () => import('@/views/instanceDetail')
       },
       {
         path: 'logList',

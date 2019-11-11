@@ -8,13 +8,11 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="24">
-        <div style="float:left">实例管理</div>
-      </el-col>
+        实例管理
     </el-row>
     <el-divider />
-    <el-row>
-      <el-col :span="20">
+    <el-row :gutter='20' style="margin-bottom:20px">
+      <el-col :span="10">
         <el-input v-model="registEmail" placeholder="请输入注册邮箱" width="100%" />
       </el-col>
       <el-col :span="4">
@@ -29,7 +27,6 @@
         </el-select>
       </el-col>
     </el-row>
-    <el-divider />
     <el-table
       ref="multipleTable"
       :data="computedTableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
@@ -69,7 +66,7 @@
       </el-table-column>
     </el-table>
     <br>
-    <div style="float:left">
+    <div>
       <el-pagination
         :current-page="currentPage"
         :page-size="pageSize"
@@ -244,15 +241,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.el-col {
-  border-radius: 4px;
-}
 .bg-purple-dark {
   background: #99a9bf;
 }

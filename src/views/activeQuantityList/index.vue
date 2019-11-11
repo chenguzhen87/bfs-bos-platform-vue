@@ -5,8 +5,8 @@
       <el-breadcrumb-item>数量</el-breadcrumb-item>
     </el-breadcrumb>
     <el-divider />
-    <el-row>
-      <el-col :span="20">
+    <el-row :gutter='20' style="margin-bottom:20px">
+      <el-col :span="10">
         <el-input v-model="queryActiveCode" placeholder="请输入激活码" width="100%" />
       </el-col>
       <el-col :span="4">
@@ -17,7 +17,6 @@
         </el-select>
       </el-col>
     </el-row>
-    <el-divider />
     <el-table
       :data="computedTableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
       border

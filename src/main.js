@@ -64,7 +64,6 @@ Object.keys(filters).forEach(key => {
 // store routr 注册全局
 window.APP_GLOBAL_STORE = store
 window.APP_GLOBAL_ROUTER = router
-
 new Vue({
   el: '#app',
   router,

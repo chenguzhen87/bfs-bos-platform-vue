@@ -68,7 +68,7 @@ service.interceptors.response.use(
         store.dispatch('user/resetUserInfo').then(() => {
           // APP_GLOBAL_ROUTER.push('/login')
           // location.href="/login"
-          APP_GLOBAL_ROUTER.replace({
+          window.APP_GLOBAL_ROUTER.replace({
             path: '/login',
             query: { redirect: APP_GLOBAL_ROUTER.currentRoute.fullPath }// 登录成功后跳入浏览的当前页面
           })
