@@ -2,7 +2,7 @@
  * @Description: 用户管理
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-08 18:58:19
+ * @LastEditTime: 2019-11-11 11:32:43
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -26,12 +26,12 @@
       style="width: 100%"
     >
       <el-table-column prop="mailbox" label="注册邮箱" width="200" />
-      <el-table-column prop="administrators" label="管理员">
+      <el-table-column prop="administrators" label="管理员" width="80">
         <template slot-scope="scope">{{ scope.row.administrators | BooleanStrValue }}</template>
       </el-table-column>
-      <el-table-column prop="instances_num" label="实例数量" />
+      <el-table-column prop="instances_num" label="实例数量" width="80" />
       <el-table-column prop="activation_code" label="邀请码" />
-      <el-table-column prop="user_status" label="状态">
+      <el-table-column prop="user_status" label="状态" width="80">
         <template slot-scope="scope">{{ scope.row.user_status | BooleanStrValue }}</template>
       </el-table-column>
       <el-table-column prop="creation_time" label="创建时间" />
@@ -141,8 +141,7 @@ export default {
       )
     },
     handleAdministrator(row, status, type) {
-      const url =
-      // `${apiBaseUrl}/v1/users/` + row.mailbox + "/administrator/status/" + type; // this.axios.put(url).
+      // const url = // `${apiBaseUrl}/v1/users/` + row.mailbox + "/administrator/status/" + type; // this.axios.put(url).
       setUserAdmin(row.mailbox, type).then(
         response => {
           console.log(response)

@@ -2,7 +2,7 @@
  * @Description: 激活码管理
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 19:26:26
- * @LastEditTime: 2019-11-08 18:50:10
+ * @LastEditTime: 2019-11-11 11:27:23
  * @LastEditors: Duchin/梁达钦
  -->
 <template>
@@ -37,7 +37,7 @@
       <el-table-column prop="new_key_code" label="ID" width="200" :show-overflow-tooltip="true">
         <!--<template slot-scope="scope">{{scope.row.code_key | base64Encoder}}</template> -->
       </el-table-column>
-      <el-table-column prop="totalQuantity" label="总数">
+      <el-table-column prop="totalQuantity" label="总数" width="80">
         <template slot-scope="scope">
           <router-link
             class="nav-item"
@@ -45,11 +45,11 @@
           >{{ scope.row.used_code_num + scope.row.un_used_code_num }}</router-link>
         </template>
       </el-table-column>
-      <el-table-column prop="used_code_num" label="已激活" />
-      <el-table-column prop="un_used_code_num" label="未激活" />
+      <el-table-column prop="used_code_num" label="已激活" width="80" />
+      <el-table-column prop="un_used_code_num" label="未激活" width="80" />
       <el-table-column prop="activation_base_info.Mailbox" label="激活码管理员" />
       <el-table-column prop="activation_base_info.remarks" label="备注" />
-      <el-table-column prop="activation_base_info.send_mail_status" label="自动发送邮件">
+      <el-table-column prop="activation_base_info.send_mail_status" label="自动发送邮件" width="80">
         <template
           slot-scope="scope"
         >{{ scope.row.activation_base_info.send_mail_status | BooleanStrValue }}</template>
@@ -188,6 +188,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .active-code-list{
   .title{
     height: 40px;
