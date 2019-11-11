@@ -115,7 +115,7 @@ export const constantRoutes = [
       {
         path: 'activeQuantityList/:id',
         name: 'ActiveCodeList',
-        component: () => import('@/views/activeCodeList/ActiveQuantityList')
+        component: () => import('@/views/activeQuantityList')
       },
       {
         path: 'userList',
@@ -130,7 +130,7 @@ export const constantRoutes = [
       {
         path: 'instanceDetail/:id',
         name: 'instanceDetail',
-        component: () => import('@/views/instanceList/instanceDetail')
+        component: () => import('@/views/instanceDetail')
       },
       {
         path: 'logList',
