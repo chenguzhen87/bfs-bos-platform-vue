@@ -2,8 +2,8 @@
  * @Description: 管理后台布局组件
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 15:20:34
- * @LastEditTime: 2019-11-06 20:47:40
- * @LastEditors: icony/精武陈真
+ * @LastEditTime: 2019-11-08 19:22:37
+ * @LastEditors: Duchin/梁达钦
  -->
 
 <template>
@@ -13,29 +13,31 @@
     </el-header>
     <el-container>
       <el-aside v-if="isPC" width="200px">
-        <el-menu>
+        <el-menu
+          @select="handleMenu"
+        >
           <el-menu-item index="1">
             <i class="el-icon-menu" />
             <span slot="title">
-              <router-link class="nav-item" to="/console/activecode">激活码管理</router-link>
+              激活码管理
             </span>
           </el-menu-item>
           <el-menu-item index="2">
             <i class="el-icon-document" />
             <span slot="title">
-              <router-link class="nav-item" to="/console/user">用户管理</router-link>
+              用户管理
             </span>
           </el-menu-item>
           <el-menu-item index="3">
             <i class="el-icon-s-opportunity" />
             <span slot="title">
-              <router-link class="nav-item" to="/console/instances">实例管理</router-link>
+              实例管理
             </span>
           </el-menu-item>
           <el-menu-item index="4">
             <i class="el-icon-setting" />
             <span slot="title">
-              <router-link class="nav-item" to="/console/logs">日志管理</router-link>
+              日志管理
               <!--<router-link class="nav-item" to="#">日志管理</router-link> -->
             </span>
           </el-menu-item>
@@ -59,7 +61,8 @@ export default {
   },
   data() {
     return {
-      isPC: true
+      isPC: true,
+      menuIndex: '1'
     }
   },
   mounted() {
@@ -84,6 +87,33 @@ export default {
         return true
       } else {
         return false
+      }
+    },
+    handleMenu(index, indexKey) {
+      if (this.menuIndex === index) {
+        return
+      } else {
+        this.menuIndex = index
+      }
+      console.log('index,', index, indexKey)
+      switch (index) {
+        case '1':
+          this.$router.push('/adminLayout/activeCodeList')
+          break
+        case '2':
+          this.$router.push('/adminLayout/userList')
+          break
+        case '3':
+          this.$router.push('/adminLayout/instanceList')
+          break
+        case '4':
+          this.$router.push({
+            path: '/adminLayout/logList',
+            query: {
+              log: false
+            }
+          })
+          break
       }
     }
   }

@@ -2,7 +2,7 @@
  * @Description: 权限控制
  * @Author: icony/精武陈真
  * @Date: 2019-11-06 10:57:45
- * @LastEditTime: 2019-11-07 19:32:46
+ * @LastEditTime: 2019-11-08 18:30:03
  * @LastEditors: Duchin/梁达钦
  */
 import router from './router'
@@ -19,8 +19,10 @@ const whiteList = [
   '/',
   'home',
   '/login',
-  '/register',
   '/login/logincode',
+  '/register',
+  '/register/registrationEmail',
+  '/register/registrationCode',
   '/404'
   // '/layout',
   // '/layout/account',

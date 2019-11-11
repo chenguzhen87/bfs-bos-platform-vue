@@ -57,7 +57,7 @@ module.exports = {
     externals: {
       apiBaseUrl: 'API_BASE_URL',
       skypegmwcnHomeUrl: 'SKYPEGMWCN_HOME_URL',
-      invatationCodeUrl: 'INVITATION_CODE_URL'
+      invitationCodeUrl: 'INVITATION_CODE_URL'
       // 这里的 BASE_URL 与/static/conf.js里的key 值一致
     }
   },

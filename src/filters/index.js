@@ -1,6 +1,5 @@
 // import parseTime, formatTime and set to filter
 export { parseTime, formatTime } from '@/utils'
-const Base64 = require('js-base64').Base64
 /**
  * Show plural label if time is plural number
  * @param {number} time
@@ -68,30 +67,14 @@ export function uppercaseFirst(string) {
 }
 
 /**
- * Base64 加密转码
- * @param {String} string
- */
-export function base64Encoder(string) {
-  return Base64.encode(string)
-}
-
-/**
- * Base64 解密转码
- * @param {String} string
- */
-export function base64Decoder(string) {
-  return Base64.decode(string)
-}
-
-/**
  * Base64 状态过滤判断
  * @param {String} string
  */
 export function BooleanStrValue(string) {
   if (string) {
-    return '是';
+    return '是'
   } else {
-    return '否';
+    return '否'
   }
 }
 
@@ -100,24 +83,24 @@ export function BooleanStrValue(string) {
  * @param {String} string 类型
  */
 export function LogOptionType(value) {
-  if ('create' == value) {
-    return '创建';
-  } else if ('closed' == value) {
-    return '关闭';
-  } else if ('start' == value) {
-    return '启动';
-  } else if ('delete' == value) {
-    return '删除';
-  } else if ('import' == value) {
-    return '导入';
-  } else if ('export' == value) {
-    return '导出';
-  } else if ('login' == value) {
-    return '登陆';
-  } else if ('logout' == value) {
-    return '登出';
-  } else{
-    return '未定义';
+  if (value == 'create') {
+    return '创建'
+  } else if (value == 'closed') {
+    return '关闭'
+  } else if (value == 'start') {
+    return '启动'
+  } else if (value == 'delete') {
+    return '删除'
+  } else if (value == 'import') {
+    return '导入'
+  } else if (value == 'export') {
+    return '导出'
+  } else if (value == 'login') {
+    return '登陆'
+  } else if (value == 'logout') {
+    return '登出'
+  } else {
+    return '未定义'
   }
 }
 
@@ -127,25 +110,9 @@ export function LogOptionType(value) {
  */
 export function EmptyReplace(value) {
   if (typeof value === 'undefined' || value == null || value == '') {
-    return '-';
+    return '-'
   } else {
     return value
   }
 }
 
-/**
- * 数据是否存在判断
- * @param {String} value undefined null ''类型
- */
-export function formatDate(now) {
-  if (typeof now==='undefined') {
-    return '';
-  }
-  var year = now.getFullYear()
-  var month = ('0' + (now.getMonth() + 1)).substr(-2)
-  var date = now.getDate()
-  var hour = ('0' + now.getHours()).substr(-2)
-  var minute = ('0' + now.getMinutes()).substr(-2)
-  var second = ('0' + now.getSeconds()).substr(-2)
-  return year + '-' + month + '-' + date + ' ' + hour + ':' + minute + ':' + second
-}

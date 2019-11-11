@@ -7,22 +7,22 @@
             <span style="font-size:30px;">在线账户管理系统</span>
             <br>
             <br>
-            <span style="font-size:30px;margin:50px;">登录</span>
+            <span style="font-size:30px;margin:50px;">注册</span>
             <br>
             <br>
             <br>
 
-            <el-form ref="loginForm" :model="loginForm" :rules="rules">
+            <el-form ref="verificationForm" :model="verificationForm" :rules="rules">
               <el-form-item style="text-align:left;width:80%" prop="code">
-                <el-input v-model="loginForm.code" placeholder="请选输入验证码" />
+                <el-input v-model="verificationForm.code" placeholder="请选输入验证码" />
                 <br>
                 <span>验证码已发送邮箱</span>
                 <br>
                 <span>没收到，请检查垃圾邮件</span>
               </el-form-item>
               <el-form-item>
-                <el-button type="warning" plain @click="changeEmail()">更换邮箱</el-button>
-                <el-button type="primary" @click="onSubmit('loginForm')">登录</el-button>
+                <el-button type="warning" @click="resetEmail">更换邮箱</el-button>
+                <el-button type="primary" @click="register('verificationForm')">注册</el-button>
               </el-form-item>
             </el-form>
           </el-tabs>
@@ -32,17 +32,23 @@
   </div>
 </template>
 <script>
-import { mapActions } from '@icony/vue-container/vuex'
+import { mapMutations } from '@icony/vue-container/vuex'
+import { UPDATE_USER_INFO } from '@/utils/mutation-types'
 import {
+  registrationCode
+} from '@/api/user.js'
+import {
+  base64Encoder,
   base64Decoder
 } from '@/filters/convert'
 export default {
-  name: 'Logincode',
+  name: 'RegistrationCode',
   data() {
     return {
-      loginForm: {
+      verificationForm: {
         code: ''
       },
+      invitationCode: '',
       email: '',
       rules: {
         code: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
@@ -50,24 +56,36 @@ export default {
     }
   },
   mounted() {
+    // 邀请码
+    this.invitationCode = base64Decoder(this.$route.query.invitationCode)
     this.email = base64Decoder(this.$route.query.email)
+    console.log('invitationCode=' + this.invitationCode)
+    console.log('email=' + this.email)
   },
   methods: {
-    onSubmit(formName) {
-      const verificationCode = this.loginForm.code
-      // let url = `/v1/user/login`;this.axios.post(url, data)
+    register(formName) {
+      // const url = `${apiBaseUrl}/v1/user/register` //this.axios.post(url, data).
       const data = {
+        activation_code: this.invitationCode,
         mailbox: this.email,
-        verification_code: verificationCode
+        verification_code: this.verificationForm.code
       }
+
+      console.log('data=', data)
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.login(data).then(
+          registrationCode(data).then(
             response => {
-              // print login
-              if (response) {
-                this.$router.push({ path: '/layout' })
-              }
+              console.log(response.data)
+              this.UPDATE_USER_INFO(response)
+              this.$message({
+                message: '注册成功，将为你登录并跳转主页.....',
+                type: 'success',
+                duration: 1000,
+                onClose: () => {
+                  this.$router.push('/layout')
+                }
+              })
             },
             err => {
               if (err.data) {
@@ -78,7 +96,7 @@ export default {
                   default:
                     console.log(err.data)
                     console.log(err.data.data.message)
-                    this.$message.error('登录失败：' + err.data.data.message)
+                    this.$message.error('注册失败')
                 }
               }
             }
@@ -89,16 +107,20 @@ export default {
         }
       })
     },
-    changeEmail() {
-      this.$router.push('/login')
+    resetEmail() {
+      this.$router.push({
+        path: '/register/registrationEmail',
+        query: {
+          invitationCode: base64Encoder(this.invitationCode)
+        }
+      })
     },
-    ...mapActions({
-      login: 'user/login'
-    })
+    ...mapMutations('user', [UPDATE_USER_INFO])
   }
 }
 </script>
 <style lang="scss" scoped>
+/* @import "../../../assets/styles/main_ui.css"; */
 body {
   margin: 0px;
 }
